@@ -1,0 +1,3 @@
+
+eval(raw_input())
+ 
