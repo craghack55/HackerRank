@@ -13,9 +13,9 @@ from Contests cont, Colleges coll, Challenges chal,
 where cont.contest_id = coll.contest_id and coll.college_id = chal.college_id
     and chal.challenge_id = vist.challenge_id(+)
     and chal.challenge_id = sust.challenge_id(+)
-group  by cont.contest_id, cont.hacker_id, cont.name
-having sum( nvl( sust.total_submissions, 0)) > 0 or
-       sum( nvl( sust.total_accepted_submissions, 0)) > 0 or
-       sum( nvl( vist.total_views, 0)) > 0 or
-       sum( nvl( vist.total_unique_views, 0)) > 0 or
+group by cont.contest_id, cont.hacker_id, cont.name
+having sum(nvl(sust.total_submissions, 0)) > 0 or
+       sum(nvl(sust.total_accepted_submissions, 0)) > 0 or
+       sum(nvl(vist.total_views, 0)) > 0 or
+       sum(nvl(vist.total_unique_views, 0)) > 0 or
 order by cont.contest_id;
